@@ -1,0 +1,258 @@
+/* Genel Arka Plan ve Font Ayarları */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+/* Ana uygulama */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  color: #ffffff;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* React inline style ile arka plan rengi değişirse yumuşak geçiş sağlar */
+  transition: background-color 0.8s ease-in-out, background 0.8s ease-in-out;
+}
+
+.App-header {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+}
+
+/* Başlıklar */
+h1,
+.main-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(to right, #00d2ff, #3a7bd5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: white;
+}
+
+h3 {
+  margin: 15px 0 0 0;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+h4,
+h5 {
+  color: white;
+}
+
+/* Kart */
+.card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 24px !important;
+  padding: 35px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  margin-bottom: 30px;
+  color: white;
+}
+
+/* Input grubu */
+.input-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.input-group label,
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #d9d9d9;
+  font-size: 1rem;
+}
+
+/* Input */
+.form-control {
+  border-radius: 12px !important;
+  border: none !important;
+  padding: 12px !important;
+}
+
+/* Slider */
+input[type="range"],
+.form-range {
+  width: 100%;
+  cursor: pointer;
+  accent-color: #00d2ff;
+}
+
+/* Genel buton */
+button {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(110, 142, 251, 0.4);
+}
+
+button:disabled {
+  background: #444;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Bootstrap primary buton */
+.btn-primary {
+  background: linear-gradient(135deg, #6e8efb, #a777e3) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 14px !important;
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(110, 142, 251, 0.4);
+}
+
+/* Sonuç kartı */
+.result-card {
+  margin-top: 30px;
+  padding: 25px;
+  background: rgba(0, 210, 255, 0.1);
+  border-left: 5px solid #00d2ff;
+  border-radius: 16px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Tür yazısı */
+.highlight {
+  color: #00d2ff;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Sanatçı adı */
+.artist-name {
+  color: #ff9800;
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  text-shadow: 0 0 10px rgba(255, 152, 0, 0.3);
+}
+
+/* Sanatçı resmi kullanıyorsan */
+.artist-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Tablo */
+.table {
+  color: white !important;
+  text-align: center;
+}
+
+.table-dark th {
+  background-color: #111827 !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: white;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) > * {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+/* Animasyon */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobil uyum */
+@media (max-width: 768px) {
+  .App {
+    padding: 25px 12px;
+    justify-content: flex-start;
+  }
+
+  .App-header {
+    padding: 10px;
+  }
+
+  h1,
+  .main-title {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .artist-image {
+    width: 130px;
+    height: 130px;
+  }
+
+  .artist-name {
+    font-size: 1.4rem;
+  }
+}
